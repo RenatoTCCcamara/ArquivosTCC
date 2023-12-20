@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * \file nav_graph.xml
+ *
+ * Handles fragments, organize their orders and flux
+ */
+  -->
+
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/connectionScreen"
+    >
+
+    <fragment
+        android:id="@+id/commandsScreen"
+        android:name="com.tcc.views.commandsscreen.commandsScreen"
+        android:label="commandsScreen"
+        >
+        <action
+            android:id="@+id/action_commandsScreen_to_monitoringScreen"
+            app:destination="@id/monitoringScreen"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/monitoringScreen"
+        android:name="com.tcc.views.monitoringscreen.MonitoringScreen"
+        android:label="monitoringScreen"
+        >
+        <action
+            android:id="@+id/action_monitoringScreen_to_commandsScreen"
+            app:destination="@id/commandsScreen"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/connectionScreen"
+        android:name="com.tcc.views.connectionscreen.ConnectionScreen"
+        android:label="ConnectionScreen"
+        >
+        <action
+            android:id="@+id/action_connectionScreen_to_commandsScreen"
+            app:destination="@id/commandsScreen"
+            />
+    </fragment>
+
+</navigation>
